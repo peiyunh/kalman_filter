@@ -1,5 +1,6 @@
 # CMU RI 16-711 KDC 
 ## Homework 4: Kalman Filtering 
+Arpit Agarwal, Adam Harley, Dhiraj Gandhi, Peiyun Hu
 
 ### Part 1: Handling translation and rotation
 
@@ -13,7 +14,8 @@ Given the measurements of 10 noisy markers at each time stamp and the markers' l
 
 **measurement** The measurement maps from one state to its predicted observation. In this work, given a predefined/estimated configuration of markers, we can map the state of COM to the locations of markers. Such measurement is implemented in [predict_markers.m](https://github.com/peiyunh/kalman_filter/blob/master/predict_markers.m). To estimate the residual covariance and eventually compute the Kalman Gain, we linearizes the measurement and uses its Jacobian matrix. Unlike the motion dynamics, the measurement Jacobian is much less complicated. Thus, we compute the Jacobian using symbolic derivatives, which is scripted in [compute_jacobian.m](https://github.com/peiyunh/kalman_filter/blob/master/compute_jacobian.m). 
 
-**How it works** Once we estimate the location of COM, we can further estimate the location of markers. We visually compare the estimated marker locations to the raw noisy marker locations, as shown in the video below. 
+**How it works** Once we have the location of COM, we can estimate the location of markers. In the video below, we visualize how Kalman Filter is able to obtain stable estimate of markers comparing to the raw noisy data. 
+[![Kalman Filtered Markers](https://img.youtube.com/vi/PUa98uWgXPY/0.jpg)](https://www.youtube.com/watch?v=PUa98uWgXPY)
 
 
 ### Part 2: Handling occlusion 
