@@ -25,7 +25,7 @@ legend({'v_x^m', 'v_y^m', 'v_z^m'});
 title('Spatial velocity track'); 
 grid on;
 
-print('-dpdf', [data_file '_spatial_track.pdf']);
+print('-dpng', [data_file '_spatial_track.png']);
 
 %% 
 figure(2);
@@ -63,7 +63,7 @@ legend({'q_0^m', 'q_1^m', 'q_2^m', 'q_3^m'});
 title('Quaternion track'); 
 grid on;
 
-print('-dpdf', [data_file '_angular_track.pdf']);
+print('-dpng', [data_file '_angular_track.png']);
 
 %% variance information 
 figure(3); 
@@ -90,7 +90,7 @@ legend({'var^m(v_x)', 'var^m(v_y)', 'var^m(v_z)'});
 title('Spatial velocity variance'); 
 grid on;
 
-print('-dpdf', [data_file '_spatial_var.pdf']);
+print('-dpng', [data_file '_spatial_var.png']);
 
 %% 
 figure(4); 
@@ -117,7 +117,7 @@ legend({'var^m(\omega_x)', 'var^m(\omega_y)', 'var^m(\omega_z)'});
 title('Angular velocity variance'); 
 grid on;
 
-print('-dpdf', [data_file '_angular_var.pdf']);
+print('-dpng', [data_file '_angular_var.png']);
 
 %% kalman gains 
 figure(5); 
@@ -125,7 +125,7 @@ plot(gains);
 legend({'x', 'y', 'z'}); 
 title('Kalman Gains'); 
 grid on;
-print('-dpdf', [data_file '_kalman_gain.pdf']);
+print('-dpng', [data_file '_kalman_gain.png']);
 
 %% marker positions
 if size(states_m, 2) > 12 
@@ -138,5 +138,5 @@ if size(states_m, 2) > 12
 		grid on; 
 		title(sprintf('Marker #%d spatial position track', i)); 
 	end	
-	print('-dpdf', [data_file '_marker_body.pdf']); 
+	print('-dpng', [data_file '_marker_body.png']); 
 end
