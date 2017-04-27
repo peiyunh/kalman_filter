@@ -21,11 +21,9 @@ What happens behind the scene is that we gradually correct the state prediction 
 
 Please find our results of part 1 under [`part1`](/part1), which contains state estimates (p1a0x) and visualizations. For an example, we show visualization of p1n00 below. 
 ![Spatial Track](/part1/p1n00_spatial_track.png)
-![Spatial Variance](/part1/p1n00.spatial_var.png)
+![Spatial Variance](/part1/p1n00_spatial_var.png)
 ![Angular Track](/part1/p1n00_angular_track.png)
 ![Angular Variance](/part1/p1n00_angular_var.png)
-
-
 
 
 ### Part 2: Handling occlusion 
