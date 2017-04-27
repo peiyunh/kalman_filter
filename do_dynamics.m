@@ -30,4 +30,4 @@ B = [ 0
 	  T*wdot(2)
 	  T*wdot(3)] ; 
 
-state_estimate = A * state_estimate + B; 
+state_estimate(1:12) = A * state_estimate(1:12) + B; 

@@ -1,6 +1,6 @@
 function [ quaternion, state_estimate] = hack_init_estimates( markersn )
 
-global n_m markers_body T 
+global n_m T 
 
 % use linear regression to estimate COM location
 A = zeros( n_m*3, 3 );
