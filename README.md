@@ -12,11 +12,13 @@ Given the measurements of 10 noisy markers at each time stamp and the markers' l
 
 **process** The process maps from one state to another, following the rigid body motion dynamics. The dynamics is implemented in [`do_dynamics.m`](https://github.com/peiyunh/kalman_filter/blob/master/do_dynamics.m). To estimate the covariance of state, we linearizes the dynamics and uses its Jacobian matrix. Since solving symbolic derivatives for the dynamics lead to complicated and messy equations, we decide to evaluate the derivatives numerically, which is implemented in [`relinearize.m`](https://github.com/peiyunh/kalman_filter/blob/master/relinearize.m). 
 
-**measurement** The measurement maps from one state to its predicted observation. In this work, given a predefined/estimated configuration of markers, we can map the state of COM to the locations of markers. Such measurement is implemented in [predict_markers.m](https://github.com/peiyunh/kalman_filter/blob/master/predict_markers.m). To estimate the residual covariance and eventually compute the Kalman Gain, we linearizes the measurement and uses its Jacobian matrix. Unlike the motion dynamics, the measurement Jacobian is much less complicated. Thus, we compute the Jacobian using symbolic derivatives, which is scripted in [compute_jacobian.m](https://github.com/peiyunh/kalman_filter/blob/master/compute_jacobian.m). 
+**measurement** The measurement maps from one state to its predicted observation. In this work, given a predefined/estimated configuration of markers, we can map the state of COM to the locations of markers. Such measurement is implemented in [predict_markers.m](https://github.com/peiyunh/kalman_filter/blob/master/predict_markers.m). To estimate the residual covariance and eventually compute the Kalman Gain, we linearizes the measurement and uses its Jacobian matrix. Unlike the motion dynamics, the measurement Jacobian is much less complicated. Thus, we compute the Jacobian using symbolic derivatives, which is scripted in [compute_jacobian.m](compute_jacobian.m). 
 
 **How it works** Once we have the location of COM, we can estimate the location of markers. In the video below, we visualize how Kalman Filter is able to obtain stable estimate of markers comparing to the raw noisy data. 
 [![Kalman Filtered Markers](https://img.youtube.com/vi/PUa98uWgXPY/0.jpg)](https://www.youtube.com/watch?v=PUa98uWgXPY)
 
+What happens behind the scene is that we gradually correct the state prediction based on the observations with a proportion of the Kalman Gain. Ideally, we are less likely to make big changes as we gather more evidence. We visualize the Kalman Gain below, which drops down close to zero after a couple of timestamps. 
+![Kalman Gains](/part1/p1n00_kalman_gain.png)
 
 ### Part 2: Handling occlusion 
 
