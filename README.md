@@ -2,11 +2,9 @@
 Arpit Agarwal, Adam Harley, Dhiraj Gandhi, Peiyun Hu
 
 ### Overview
-Please run [`part1.m`](part1.m), [`part2.m`](part2.m), and [`part3.m`](part3.m) to reproduce our results. If you have any questions, please contact Peiyun Hu (peiyunh@cs.cmu.edu). 
+We follow the formulation of [Extended Kalman Filter on Wikipedia](https://en.wikipedia.org/wiki/Extended_Kalman_filter). Please run [`part1.m`](part1.m), [`part2.m`](part2.m), and [`part3.m`](part3.m) to reproduce our results. If you run into any issues, please contact [Peiyun Hu](peiyunh@cs.cmu.edu). 
 
 ### Part 1: Handling translation and rotation
-
-We follow the formulation of [Extended Kalman Filter on Wikipedia](https://en.wikipedia.org/wiki/Extended_Kalman_filter). 
 
 Given the measurements of 10 noisy markers at each time stamp and the markers' location in the body coordinate system, we want to estimate the state of the Center of Mass, including 3D location, velocity, orientation, and angular velocity at each time stamp. To make our estimation of state less noisy, we build an Extended Kalman Filter to explicitly factor out process noise and measurement noise. Below, we will introduce how we implement the Extended Kalman Filter, including the process, measurement, and initial states. In the end, we will show how the filter works with an example. 
 
