@@ -20,6 +20,15 @@ Given the measurements of 10 noisy markers at each time stamp and the markers' l
 What happens behind the scene is that we gradually correct the state prediction based on the observations with a proportion of the Kalman Gain. Ideally, we are less likely to make big changes as we gather more evidence. We visualize the Kalman Gain below, which drops down close to zero after a couple of timestamps. 
 ![Kalman Gains](/part1/p1n00_kalman_gain.png)
 
+Please find our results of part 1 under [`part1`](/part1), which contains state estimates (p1a0x) and visualizations. For an example, we show visualization of p1n00 below. 
+![Spatial Track](/part1/p1n00_spatial_track.png)
+![Spatial Variance](/part1/p1n00.spatial_var.png)
+![Angular Track](/part1/p1n00_angular_track.png)
+![Angular Variance](/part1/p1n00_angular_var.png)
+
+
+
+
 ### Part 2: Handling occlusion 
 
 ### Part 3: Estimating marker locations
