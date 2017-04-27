@@ -1,6 +1,9 @@
 # CMU RI 16-711 KDC Homework 4: Kalman Filtering 
 Arpit Agarwal, Adam Harley, Dhiraj Gandhi, Peiyun Hu
 
+### Overview
+Please run [`part1.m`](part1.m), [`part2.m`](part2.m), and [`part3.m`](part3.m) to reproduce our results. If you have any questions, please contact Peiyun Hu (peiyunh@cs.cmu.edu). 
+
 ### Part 1: Handling translation and rotation
 
 We follow the formulation of [Extended Kalman Filter on Wikipedia](https://en.wikipedia.org/wiki/Extended_Kalman_filter). 
