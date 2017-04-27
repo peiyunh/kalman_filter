@@ -2,9 +2,6 @@ function state_estimate = do_dynamics( state_estimate, I_world );
 
 global T
 
-I_world
-pause;
-
 w = state_estimate(10:12); 
 wdot = -inv(I_world) * cross(w, I_world*w);
 

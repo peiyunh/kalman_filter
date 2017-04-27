@@ -63,5 +63,5 @@ end
 occ_idx = find(markersn(index,:)==1e10);
 if ~isempty(occ_idx)
   H(occ_idx,:)=0;
-  marker_error(unique(ceil(occ_idx/3)))=0;
+  marker_error(max(occ_idx)/3)=0;
 end

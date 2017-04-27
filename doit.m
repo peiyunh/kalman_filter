@@ -87,7 +87,6 @@ Q(12,12) = 1e-3;
 R = diag( ones( n_m*3, 1 ) );
 
 for index = 1:length(markersn)
-  
   % Compute rotation matrix and update quaternion based on current state
   [ quaternion, rot_mat ] = update_rotation( state_estimate, quaternion );
   

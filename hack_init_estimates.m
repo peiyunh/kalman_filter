@@ -28,8 +28,10 @@ b = b';
 p = A\b;
 
 % initialize COM velocity with centroid velocity (approximately)
-markersn = squeeze(reshape(markersn', 3, 8, []));
-v = (markersn(:,end) - markersn(:,1)) / ( (size(markersn,3)-1)*T ) ; 
+markersn = reshape(markersn', 3, 8, []);
+markersn(markersn==1e10) = nan; 
+markersn = squeeze(nanmean(markersn, 2)); 
+v = (markersn(:,end) - markersn(:,1)) / ( (size(markersn,2)-1)*T ) ; 
 
 quaternion = [1 0 0 0]';
 state_estimate = [ p(1) p(2) p(3) v(1) v(2) v(3) 0 0 0 0 0 0 ]';
