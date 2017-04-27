@@ -15,16 +15,17 @@ for i = 1:n_m
  end
 end
 
-% NOTE: uncomment to handle the occlusion case
-% [~, i] = find(markersn(1,:) == 1e10); 
-% A(i,:) = []; 
-% b(i) = []; 
+% NOTE handle occluded cases 
+occ_idx = find(markersn(1,:)==1e10);
+if ~isempty(occ_idx) 
+	fprintf('Found %d marker occluded in the first measurement.\n', numel(occ_idx)/3);
+	A(occ_idx,:) = []; 
+	b(occ_idx) = []; 
+end	
 
 % actually do regression
 b = b';
 p = A\b;
-% check errors (residuals)
-% A*p - b
 
 % initialize COM velocity with centroid velocity (approximately)
 markersn = squeeze(reshape(markersn', 3, 8, []));

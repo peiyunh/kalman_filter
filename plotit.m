@@ -113,7 +113,7 @@ print('-dpdf', [data_file '_angular_var.pdf']);
 
 %% kalman gains 
 figure(5); 
-title('Kalman Gains'); 
-
 plot(gains);
+legend({'x', 'y', 'z'}); 
+title('Kalman Gains'); 
 print('-dpdf', [data_file '_kalman_gain.pdf']);

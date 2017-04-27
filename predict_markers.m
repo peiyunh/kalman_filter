@@ -30,14 +30,13 @@ end
 % make it vertical
 marker_error = marker_error';
 
-%% compute measurement jacobian 
+%% compute measurement jacobian   
 ax = state_estimate(7); sx = sin(ax); cx = cos(ax); 
 ay = state_estimate(8); sy = sin(ay); cy = cos(ay); 
 az = state_estimate(9); sz = sin(az); cz = cos(az); 
 
 %% NOTE: we used symoblic derivative to compute the jacobian of H 
 % see compute_jacobian.m for more detail
-
 H = zeros(3*n_m, n_x); 
 for i = 1:n_m
   x = markers_body(i,1); 
@@ -59,4 +58,10 @@ for i = 1:n_m
         0 0 0 
         0 0 0]; 
   H((i-1)*3+[1:3], :) = [dp dx dy dz dw];
+end
+
+occ_idx = find(markersn(index,:)==1e10);
+if ~isempty(occ_idx)
+  H(occ_idx,:)=0;
+  marker_error(unique(ceil(occ_idx/3)))=0;
 end

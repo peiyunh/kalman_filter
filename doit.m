@@ -1,4 +1,5 @@
 function doit(data_file)
+close all;
 
 if nargin < 1
   error('please specify the data file');
@@ -67,16 +68,6 @@ variance_estimate(9,9) = 1;
 variance_estimate(10,10) = 1;
 variance_estimate(11,11) = 1;
 variance_estimate(12,12) = 1;
-
-% % postions
-% variance_estimate(1,1) = 1;
-% variance_estimate(2,2) = 1;
-% variance_estimate(3,3) = 1;
-
-% % velocities
-% variance_estimate(4,4) = 1;
-% variance_estimate(5,5) = 1;
-% variance_estimate(6,6) = 1;
 
 Q = diag( ones( n_x, 1 ) );
 Q(1,1) = 1e-6;
