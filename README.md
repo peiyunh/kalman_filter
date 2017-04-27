@@ -28,8 +28,8 @@ Please find our results of part 1 under [`part1`](/part1), which contains state 
 
 ### Part 2: Handling occlusion 
 To handle occlusion, we need to make two modifications to our solution of Part 1. 
-- Make sure we don't consider occluded markers when computing the initial state, including initial location and velocity; [`hack_init_estimates.m`](hack_init_estimates.m). 
-- Make sure the rows of measurement Jacobian that correspond to occluded markers are zeros. [`predict_markers.m`](predict_markers.m). 
+- Make sure we don't consider occluded markers when computing the initial state, including initial location and velocity; [(`hack_init_estimates.m`)](hack_init_estimates.m)
+- Make sure the rows of measurement Jacobian that correspond to occluded markers are zeros. [(`predict_markers.m`)](predict_markers.m) 
 
 Please find our results of part 2 under [`part2`](/part2), which contains state estimates (p2a0x) and visualizations. For an example, we show visualization of p2n00 below. 
 ![Spatial Track](/part2/p2n00_spatial_track.png)
@@ -39,8 +39,8 @@ Please find our results of part 2 under [`part2`](/part2), which contains state 
 
 ### Part 3: Estimating marker locations
 To estimate marker locations along with the state of COM, we simply add marker locations (in body coordinate system) into our state variable. There are two modifications we need to make based on the solution of Part 1: 
-- Make sure we initialize the additional dimensions of the state and also specify variance of esitmates. [`doit_slam.m`](doit_slam.m)
-- Instead of using predefined marker body configuration, we always refer to the state variable for markers' relative location. Thus, when computing the Jacobian in measurement, we need to compute the derivatives w.r.t. the marker location as well. [`predict_markers_slam.m`](predict_markers_slam.m). 
+- Make sure we initialize the additional dimensions of the state and also specify variance of esitmates. [(`doit_slam.m`)](doit_slam.m)
+- Instead of using predefined marker body configuration, we always refer to the state variable for markers' relative location. Thus, when computing the Jacobian in measurement, we need to compute the derivatives w.r.t. the marker location as well. [(`predict_markers_slam.m`)](predict_markers_slam.m)
 
 Please find our results of part 3 under [`part3`](/part3), which contains state estimates (p3a0x) and visualizations. For an example, we show visualization of p3n00 below. 
 ![Spatial Track](/part3/p3n00_spatial_track.png)
